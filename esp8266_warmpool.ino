@@ -17,8 +17,8 @@ Ctrl :
 #define XtoInt(x,y) (int16_t)word(msg[x], msg[y])
 
 #if defined(ESP8266)
-#define WIFI_SSID "ERLIPA2" // YOUR WIFI SSID
-#define WIFI_PASSWORD "r0ller0n0511" // YOUR WIFI PASSWORD
+#define WIFI_SSID "xxx" // YOUR WIFI SSID
+#define WIFI_PASSWORD "xxx" // YOUR WIFI PASSWORD
 #define BROKER "192.168.1.11" // YOUR MQTT BROKER IP
 
 #define ON String(F("ON")).c_str()
