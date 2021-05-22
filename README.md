@@ -21,16 +21,24 @@ Control and query our new heat pump and later integrate it to Jeedom or other do
 
 # Remarks / ToDos
 - [x] Reverse engineer up to a usable state
--- Lecture
---- Tin
+  - Read
+    - Tin - Tout
+    - Heat - Fan
+    - On - Off
+    - Target
+  - Write
+    - On - Off
+    - Target
 - [ ] Complete Hardware
 - [ ] Make docs readable ;-)
 
-Currently, the sensors in the unit are published to MQTT. Target temperature and modes can be set (Auto, Heat, Cool, on/off) but show some inconsistency still to be fixed.
+Currently, the sensors in the unit are published to MQTT. Target temperature and modes can be set ( on/off) but show some inconsistency still to be fixed.
+- Debug is possible on Telnet (see https://github.com/JoaoLopesF/RemoteDebug)
+- Upload OTA is possible
 
 # Hardware
-  * ESP8266
-  * RS485 Interface
+  * ESP8266 (NodeMcu for me)
+  * RS485 Interface (MAX485 / RS485 Module TTL to RS-485 MCU)
   * Wires & Connectors
 
 # How to implement
