@@ -38,7 +38,7 @@ Ctrl :
 #include <ESP8266HTTPUpdateServer.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
-#include <RemoteDebug.h>
+#include <RemoteDebug.h>      //https://github.com/JoaoLopesF/RemoteDebug
 #include <CRCx.h>
 #include <PubSubClient.h>
 #include <SoftwareSerial.h>
