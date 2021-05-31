@@ -1,6 +1,6 @@
 # esp8266_warmpool
 
-On progress
+On progress...
 
 WIFI-MQTT-Bridge for Warmpool heat pump
 
