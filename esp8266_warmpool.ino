@@ -14,17 +14,11 @@ Ctrl :
  
 
 */
-#define XtoInt(x,y) (int16_t)word(msg[x], msg[y])
-
-#if defined(ESP8266)
-#define WIFI_SSID "xxx" // YOUR WIFI SSID
-#define WIFI_PASSWORD "xxx" // YOUR WIFI PASSWORD
-#define BROKER "192.168.1.11" // YOUR MQTT BROKER IP
-
 #define ON String(F("ON")).c_str()
 #define OFF String(F("OFF")).c_str()
 
 #define PUB(x,y) mqtt.publish(x, y)
+#define XtoInt(x,y) (int16_t)word(msg[x], msg[y])
 
 #define DEBUG true
 
@@ -32,17 +26,23 @@ Ctrl :
 #define WARMPOOL_TX 1
 #define WARMPOOL_RX 3
 
+#include "config.h"
+
+#if defined(ESP8266)
+
 //#include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
 #include <ESP8266HTTPUpdateServer.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
-#include <RemoteDebug.h>      //https://github.com/JoaoLopesF/RemoteDebug
+#include <RemoteDebug.h>
 #include <CRCx.h>
 #include <PubSubClient.h>
 #include <SoftwareSerial.h>
 #include <RingBuf.h>            //https://github.com/Locoduino/RingBuffer
+
+
 
 
 ESP8266WebServer httpServer(80);
@@ -362,7 +362,13 @@ void loop() {
     PUB("WARMPOOL/R83", String(XtoInt(173, 174)).c_str());
     debugW("Ecriture Broadcast 2001 Temp");
 
-  } else if (msg_dump.startsWith("01 03 B4")) {  // traitement réponses
+  } else if (msg_dump.startsWith("00 10 03 E9")) { // températures
+      PUB("WARMPOOL/Target", String(XtoInt(31, 32)).c_str());
+      m_target=XtoInt(31, 32);
+      debugW("Ecriture Broadcast 1001 consigne");
+      mqtt.publish("WARMPOOL/debug", "Broadcast 1001");
+
+  }   else if (msg_dump.startsWith("01 03 B4")) {  // traitement réponses
     if (TypeMessage==2) {
       uint8_t data[] = {msg[32], msg[34], msg[36]};
       String s;
