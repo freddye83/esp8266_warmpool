@@ -21,18 +21,20 @@ Control and query our new heat pump and later integrate it to Jeedom or other do
 
 # Remarks / ToDos
 - Compatibility
- [x] Warmpool EZ 
- [ ] irriPool IN75
- [ ] Hayward ECPI 30MA
+ - [x] Warmpool EZ 
+ - [ ] irriPool IN75
+ - [ ] Hayward ECPI 30MA
 - [x] Reverse engineer up to a usable state
   - Read
-    - Tin - Tout
-    - Heat - Fan
-    - On - Off
-    - Target
+    - [x] Tin - Tout
+    - [x] Heat - Fan
+    - [x] On - Off
+    - [x] Target
+    - [ ] Silent
   - Write
-    - On - Off
-    - Target
+    - [x] On - Off
+    - [x] Target
+    - [ ] Silent
 - [ ] Complete Hardware
 - [ ] Make docs readable ;-)
 
