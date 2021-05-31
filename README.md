@@ -20,6 +20,10 @@ Control and query our new heat pump and later integrate it to Jeedom or other do
 
 
 # Remarks / ToDos
+- Compatibility
+ [x] Warmpool EZ 
+ [ ] irriPool IN75
+ [ ] Hayward ECPI 30MA
 - [x] Reverse engineer up to a usable state
   - Read
     - Tin - Tout
